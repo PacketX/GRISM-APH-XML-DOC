@@ -21,6 +21,6 @@ metaLinks:
 
 # GRISM APH XML
 
-Welcome to the GitBook starter template! Here you'll get an overview of all the amazing features GitBook offers to help you build beautiful, interactive documentation.
+Welcome to the GRISM APH XML usage guide. This space walks you through the structure of the APH XML payloads, how to generate them, and the conventions our team follows when exchanging data.
 
-You'll see some of the best parts of GitBook in action — and find help on how you can turn this template into your own.
+Inside you'll find environment prerequisites, sample XML snippets, troubleshooting steps, and tips for adapting the GRISM workflows to your own projects.
