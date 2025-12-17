@@ -16,3 +16,5 @@
 
 * [Case Sample](xml_script/case/README.md)
   * [Aggregating traffic](xml_script/case/aggregating_traffic.md)
+  * [GTP Filtering](xml_script/case/filter_gtp_traffic.md)
+  * [GTP Filtering by Port](xml_script/case/filter_gtp_traffic_by_port.md)
