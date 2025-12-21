@@ -35,7 +35,7 @@ filter dns port and server
 
 ```xml
 <run>
-<filter id="1" sessionBase="no">
+<filter id="1">
     <or>
 	<find name="ip.addr" relation="==" content="8.8.8.8" />
 	<find name="ip.addr" relation="==" content="8.8.4.4" />

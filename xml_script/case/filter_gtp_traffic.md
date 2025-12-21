@@ -29,7 +29,7 @@ This case shows how to filter GTP traffic and forward only the matched packets t
 ```xml
 <run>
 	<!-- Filter: GTP-C only -->
-	<filter id="1" sessionBase="no">
+	<filter id="1">
 		<and>
 			<find name="gtp.cp" relation="==" content="" />
 		</and>
@@ -52,7 +52,7 @@ This case shows how to filter GTP traffic and forward only the matched packets t
 ```xml
 <run>
 	<!-- Filter: GTP-U only -->
-	<filter id="2" sessionBase="no">
+	<filter id="2">
 		<and>
 			<find name="gtp.data" relation="==" content="" />
 		</and>

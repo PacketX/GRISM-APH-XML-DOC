@@ -29,7 +29,7 @@ This case shows how to filter GTP traffic by UDP port and forward only the match
 ```xml
 <run>
 	<!-- Filter: UDP 2123 (commonly GTP-C) -->
-	<filter id="1" sessionBase="no">
+	<filter id="1">
 		<and>
 			<find name="udp.port" relation="==" content="2123" />
 		</and>
@@ -52,7 +52,7 @@ This case shows how to filter GTP traffic by UDP port and forward only the match
 ```xml
 <run>
 	<!-- Filter: UDP 2152 (commonly GTP-U) -->
-	<filter id="2" sessionBase="no">
+	<filter id="2">
 		<and>
 			<find name="udp.port" relation="==" content="2152" />
 		</and>
