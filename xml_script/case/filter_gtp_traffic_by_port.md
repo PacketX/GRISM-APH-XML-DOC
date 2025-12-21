@@ -19,7 +19,7 @@ This case shows how to filter GTP traffic by UDP port and forward only the match
 
 ## XML Walkthrough
 
-1. Define a `<filter>` under `<run>` using `<or>` / `<and>`.
+1. Define a `<filter>` under `<run>` using `<or>`.
 2. Use `<find>` with `name="udp.port"` and the target port number.
 3. In the `<chain>`, reference the filter using `<fid>F#</fid>`.
 4. Use `<next type="notmatch">` to define where unmatched packets go.
@@ -30,9 +30,9 @@ This case shows how to filter GTP traffic by UDP port and forward only the match
 <run>
 	<!-- Filter: UDP 2123 (commonly GTP-C) -->
 	<filter id="1">
-		<and>
+		<or>
 			<find name="udp.port" relation="==" content="2123" />
-		</and>
+		</or>
 	</filter>
 
 	<!-- Chain: matched -> P1, not matched -> P2 -->
@@ -53,9 +53,9 @@ This case shows how to filter GTP traffic by UDP port and forward only the match
 <run>
 	<!-- Filter: UDP 2152 (commonly GTP-U) -->
 	<filter id="2">
-		<and>
+		<or>
 			<find name="udp.port" relation="==" content="2152" />
-		</and>
+		</or>
 	</filter>
 
 	<!-- Chain: matched -> P1, not matched -> P2 -->

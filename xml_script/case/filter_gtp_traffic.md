@@ -19,7 +19,7 @@ This case shows how to filter GTP traffic and forward only the matched packets t
 
 ## XML Walkthrough
 
-1. Define a `<filter>` under `<run>` using `<or>` / `<and>`.
+1. Define a `<filter>` under `<run>` using `<or>`.
 2. Use `<find>` with `name="gtp.cp"` (GTP-C) or `name="gtp.data"` (GTP-U).
 3. In the `<chain>`, reference the filter using `<fid>F#</fid>`.
 4. Use `<next type="notmatch">` to define where unmatched packets go.
@@ -30,9 +30,9 @@ This case shows how to filter GTP traffic and forward only the matched packets t
 <run>
 	<!-- Filter: GTP-C only -->
 	<filter id="1">
-		<and>
+		<or>
 			<find name="gtp.cp" relation="==" content="" />
-		</and>
+		</or>
 	</filter>
 
 	<!-- Chain: matched -> P1, not matched -> P2 -->
@@ -53,9 +53,9 @@ This case shows how to filter GTP traffic and forward only the matched packets t
 <run>
 	<!-- Filter: GTP-U only -->
 	<filter id="2">
-		<and>
+		<or>
 			<find name="gtp.data" relation="==" content="" />
-		</and>
+		</or>
 	</filter>
 
 	<!-- Chain: matched -> P1, not matched -> P2 -->
@@ -74,7 +74,7 @@ This case shows how to filter GTP traffic and forward only the matched packets t
 
 - `gtp.cp` and `gtp.data` are treated as boolean-style filters here, so `content` is left empty (`content=""`).
 - If you don’t need to handle unmatched packets, you can omit the `<next type="notmatch">...</next>` block.
-- If you need to combine GTP filtering with inner (tunneled) header fields, add more `<find>` items under the same `<and>` / `<or>` block.
+- If you need to combine GTP filtering with inner (tunneled) header fields, add more `<find>` items under the same `<or>` block.
 
 ## Validation Checklist
 

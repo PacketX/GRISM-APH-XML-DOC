@@ -1,25 +1,21 @@
 # Element \<filter>
 
-In filter, must start at \<or>\</or> or \<and>\</and>, then put \<find/> into there like
+In filter, must start at \<or>\</or>, then put \<find/> into there like
 
 And filter id=1 -> F1, refer to Example
 
 ```xml
 <filter id="1" >
-    <or>
-	<find name="tcp.port" relation="==" content="443" />
-	<find name="udp.port" relation="==" content="53" />
-    </or>
+  <or>
+    <find name="tcp.port" relation="==" content="443" />
+    <find name="udp.port" relation="==" content="53" />
+  </or>
 </filter>
 ```
 
 ### \<or>
 
 Defines all finds conjunct with or. It has a start tag \<or> and an end tag \</or>.
-
-### \<and>
-
-Defines all finds conjunct with and. It has a start tag \<and> and an end tag \</and>.
 
 ### \<find>
 
