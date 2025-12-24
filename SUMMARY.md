@@ -19,3 +19,5 @@
   * [Aggregating traffic](xml-case-studies/case/aggregating_traffic.md)
   * [GTP Filtering](xml-case-studies/case/filter_gtp_traffic.md)
   * [GTP Filtering by Port](xml-case-studies/case/filter_gtp_traffic_by_port.md)
+  * [Test Case](xml-case-studies/case/test-case/README.md)
+    * [Page 1](xml-case-studies/case/test-case/page-1.md)

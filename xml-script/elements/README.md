@@ -1,9 +1,8 @@
 ---
-icon: book
 metaLinks: {}
 ---
 
-# Base XML Elements
+# XML Elements
 
 ## A Simple GRISM XML
 
