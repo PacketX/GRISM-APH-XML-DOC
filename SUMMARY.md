@@ -15,9 +15,9 @@
 
 ## XML Case Studies
 
-* [Case Sample](xml-case-studies/case/README.md)
-  * [Aggregating traffic](xml-case-studies/case/aggregating_traffic.md)
-  * [GTP Filtering](xml-case-studies/case/filter_gtp_traffic.md)
-  * [GTP Filtering by Port](xml-case-studies/case/filter_gtp_traffic_by_port.md)
-  * [Test Case](xml-case-studies/case/test-case/README.md)
-    * [Page 1](xml-case-studies/case/test-case/page-1.md)
+* [Case Sample](xml-case-studies/README.md)
+  * [Aggregating traffic](xml-case-studies/aggregating_traffic.md)
+  * [GTP Filtering](xml-case-studies/filter_gtp_traffic.md)
+  * [GTP Filtering by Port](xml-case-studies/filter_gtp_traffic_by_port.md)
+  * [Test Case](xml-case-studies/test-case/README.md)
+    * [Traffic Distribution](xml-case-studies/test-case/traffic-distribution.md)

@@ -27,7 +27,13 @@ Defines output ports. It has a start tag \<out> and an end tag \</out>.
 
 #### Attribute
 
-<table><thead><tr><th width="150">Attribute</th><th width="249.7142857142857">Description</th><th width="150">Type</th><th>Default (* must have)</th></tr></thead><tbody><tr><td>type</td><td>duplicate or loadBalance</td><td>String</td><td>duplicate</td></tr><tr><td>lbtype</td><td>Load Balance type, includes session, 5thash</td><td>String</td><td>session</td></tr></tbody></table>
+| Attribute | Description | Value | Type |
+|-----------|-------------|-------|------|
+| type      | Output mode: `duplicate` (send a copy to every port listed in `<out>`) or `loadBalance` (select one port from the `<out>` port list per packet/flow). | loadBalance | String |
+| lbtype    | Effective only when `type="loadBalance"`. Session/flow hashing method used for load balance. Supported value: `5thash` (computes hash by 5-tuple: src/dst IP, src/dst port, L4 protocol) so packets in the same session/flow are consistently forwarded to the same output port. | 5thash | String |
+| vlantype  | VLAN handling. Supported values: `stripping` (remove VLAN tag) or `tagging` (add VLAN tag). | tagging / stripping | String |
+| vlanid    | VLAN ID used when `vlantype="tagging"` (typical range: 1~4094). | 1 | Integer |
+| gtptype   | GTP handling. Supported value: `stripping` (remove GTP header). | stripping | String |
 
 #### Example
 
@@ -36,6 +42,10 @@ Defines output ports. It has a start tag \<out> and an end tag \</out>.
 <out>P0,P1</out>
 <!-- load Balance to P0,P1 by 5-tuple -->
 <out type="loadBalance" lbtype="5thash">P0,P1</out>
+<!-- VLAN tagging with VLAN ID 100 -->
+<out vlantype="tagging" vlanid="100">P0</out>
+<!-- GTP stripping -->
+<out gtptype="stripping">P0</out>
 ```
 
 ### \<fid>
@@ -44,37 +54,43 @@ Defines packets pass through filter id. It has a start tag \<fid> and an end tag
 
 #### Attribute
 
-<table><thead><tr><th width="150">Attribute</th><th width="150">Description</th><th>Type</th><th>Default (* must have)</th></tr></thead><tbody><tr><td>type</td><td>and/or</td><td>String</td><td>or</td></tr></tbody></table>
+| Attribute | Description                                       | Type   | Default (* must have) |
+|-----------|---------------------------------------------------|--------|------------------------|
+| type      | and/or                                            | String | or                     |
 
 #### Example
 
 ```xml
-  <fid>F1</fid>
+<fid>F1</fid>
 <!--if F1 or F2 -->
-  <fid type="or">F1,F2</fid>
+<fid type="or">F1,F2</fid>
 
 <!--if F1 and F2 -->
-  <fid type="and">F1,F2</fid>
+<fid type="and">F1,F2</fid>
 ```
 
 ### \<next>
 
-Defines going next if packet match/not match filter. It has a next tag \<next> and an end tag \</next>.
+Defines going next if packet notmatch filter. It has a next tag \<next> and an end tag \</next>.
 
 #### Attribute
 
-<table><thead><tr><th width="150">Attribute</th><th>Description</th><th>Type</th><th>Default (* must have)</th></tr></thead><tbody><tr><td>type</td><td>match/notmatch</td><td>String</td><td>match</td></tr></tbody></table>
+| Attribute | Description                                       | Type   | Default (* must have)  |
+|-----------|---------------------------------------------------|--------|------------------------|
+| type      | notmatch                                    | String | match                  |
 
 #### Example
 
 ```xml
-<!-- packet from P0, if matched F1 send to P1 else send to P2 -->
-<chain>
-  <in>P0</in> 
-  <fid>F1</fid>
-  <out>P1</out>
-  <next type="notmatch">
-    <out>P2</out>
-  </next>
-</chain>
+<run>
+  <!-- packet from P0, if matched F1 send to P1 else send to P2 -->
+  <chain>
+    <in>P0</in> 
+    <fid>F1</fid>
+    <out>P1</out>
+    <next type="notmatch">
+      <out>P2</out>
+    </next>
+  </chain>
+</run>
 ```
