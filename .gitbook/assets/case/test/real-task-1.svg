@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="260" viewBox="0 0 980 260">
+  <defs>
+    <marker id="arrow" markerWidth="6" markerHeight="6" refX="5.4" refY="2" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,2 L0,4 Z" fill="hsla(128, 100%, 37%, 1.00)" />
+    </marker>
+    <style>
+      .box { fill: #fff; stroke: #111; stroke-width: 2; rx: 8; }
+      .text { font-family: Arial, Helvetica, sans-serif; font-size: 16px; fill: #111; }
+      .small { font-size: 14px; }
+      .line { stroke: hsla(128, 100%, 37%, 1.00); stroke-width: 3; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <!-- GRISM AP frame -->
+  <rect x="250" y="40" width="430" height="185" fill="hsla(224, 84%, 38%, 0.10)" stroke="hsla(224, 84%, 38%, 1.00)" stroke-width="4" />
+  <text x="415" y="37" font-family="Arial, Helvetica, sans-serif" font-size="18px" fill="hsla(224, 84%, 38%, 1.00)">GRISM AP</text>
+
+  <!-- Input -->
+  <rect class="box" x="30" y="105" width="140" height="50" />
+  <text class="text" x="100" y="135" text-anchor="middle">Traffic In</text>
+
+  <rect class="box" x="210" y="105" width="110" height="50" />
+  <text class="text" x="265" y="135" text-anchor="middle">Port S1.1</text>
+
+  <!-- Filters -->
+  <rect class="box" x="360" y="60" width="210" height="60" />
+  <text class="text" x="465" y="90" text-anchor="middle">Filter F1</text>
+  <text class="text small" x="465" y="110" text-anchor="middle">gtp.cp</text>
+
+  <rect class="box" x="360" y="150" width="210" height="60" />
+  <text class="text" x="465" y="180" text-anchor="middle">Filter F2</text>
+  <text class="text small" x="465" y="200" text-anchor="middle">gtp.data</text>
+
+  <!-- Outputs -->
+  <rect class="box" x="610" y="45" width="110" height="50" />
+  <text class="text" x="665" y="75" text-anchor="middle">Port S3.2</text>
+
+  <rect class="box" x="610" y="105" width="110" height="50" />
+  <text class="text" x="665" y="135" text-anchor="middle">Port S3.1</text>
+
+  <rect class="box" x="780" y="25" width="170" height="70" />
+  <text class="text" x="865" y="58" text-anchor="middle">Traffic Out</text>
+  <text class="text small" x="865" y="78" text-anchor="middle">GTP-C</text>
+
+  <rect class="box" x="780" y="105" width="170" height="70" />
+  <text class="text" x="865" y="138" text-anchor="middle">Traffic Out</text>
+  <text class="text small" x="865" y="160" text-anchor="middle">GTP-C and GTP-U</text>
+
+  <rect class="box" x="610" y="165" width="110" height="50" />
+  <text class="text" x="665" y="195" text-anchor="middle">LB S2.1,S2.2</text>
+
+  <rect class="box" x="780" y="185" width="170" height="70" />
+  <text class="text" x="865" y="218" text-anchor="middle">Traffic Out</text>
+  <text class="text small" x="865" y="240" text-anchor="middle">GTP-U</text>
+
+  <!-- Arrows -->
+  <path class="line" d="M170 130 L210 130" />
+  <path class="line" d="M320 130 L360 90" />
+
+  <path class="line" d="M570 90 L610 70" />
+  <path class="line" d="M720 70 L780 60" />
+
+  <path class="line" d="M570 90 L610 130" />
+  <path class="line" d="M720 130 L780 140" />
+
+  <path class="line" d="M465 120 L465 150" />
+
+  <path class="line" d="M570 180 L610 190" />
+  <path class="line" d="M570 180 L610 140" />
+  <path class="line" d="M720 190 L780 220" />
+</svg>

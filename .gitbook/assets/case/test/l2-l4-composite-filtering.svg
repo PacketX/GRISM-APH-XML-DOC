@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="260" viewBox="0 0 980 260">
+  <defs>
+    <marker id="arrow" markerWidth="6" markerHeight="6" refX="5.4" refY="2" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L6,2 L0,4 Z" fill="hsla(128, 100%, 37%, 1.00)" />
+    </marker>
+    <style>
+      .box { fill: #fff; stroke: #111; stroke-width: 2; rx: 8; }
+      .text { font-family: Arial, Helvetica, sans-serif; font-size: 16px; fill: #111; }
+      .small { font-size: 14px; }
+      .line { stroke: hsla(128, 100%, 37%, 1.00); stroke-width: 3; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <!-- GRISM AP frame -->
+  <rect x="250" y="40" width="430" height="180" fill="hsla(224, 84%, 38%, 0.10)" stroke="hsla(224, 84%, 38%, 1.00)" stroke-width="4" />
+  <text x="415" y="37" font-family="Arial, Helvetica, sans-serif" font-size="18px" fill="hsla(224, 84%, 38%, 1.00)">GRISM AP</text>
+
+  <!-- Input -->
+  <rect class="box" x="30" y="105" width="140" height="50" />
+  <text class="text" x="100" y="135" text-anchor="middle">Traffic In</text>
+
+  <rect class="box" x="210" y="105" width="110" height="50" />
+  <text class="text" x="265" y="135" text-anchor="middle">Port S1.1</text>
+
+  <!-- Composite filter -->
+  <rect class="box" x="360" y="85" width="240" height="90" />
+  <text class="text" x="480" y="118" text-anchor="middle">Composite Filter</text>
+  <text class="text small" x="480" y="142" text-anchor="middle">F1 | F2 | F3 | F4</text>
+  <text class="text small" x="480" y="164" text-anchor="middle">IP / MAC / VLAN</text>
+
+  <!-- Output -->
+  <rect class="box" x="610" y="105" width="110" height="50" />
+  <text class="text" x="665" y="135" text-anchor="middle">Port S2.1</text>
+
+  <rect class="box" x="780" y="95" width="170" height="70" />
+  <text class="text" x="865" y="132" text-anchor="middle">Traffic Out</text>
+
+  <!-- Arrows -->
+  <path class="line" d="M170 130 L210 130" />
+  <path class="line" d="M320 130 L360 130" />
+  <path class="line" d="M600 130 L610 130" />
+  <path class="line" d="M720 130 L780 130" />
+</svg>

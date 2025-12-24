@@ -27,13 +27,13 @@ Defines output ports. It has a start tag \<out> and an end tag \</out>.
 
 #### Attribute
 
-| Attribute | Description | Value | Type |
-|-----------|-------------|-------|------|
-| type      | Output mode: `duplicate` (send a copy to every port listed in `<out>`) or `loadBalance` (select one port from the `<out>` port list per packet/flow). | loadBalance | String |
-| lbtype    | Effective only when `type="loadBalance"`. Session/flow hashing method used for load balance. Supported value: `5thash` (computes hash by 5-tuple: src/dst IP, src/dst port, L4 protocol) so packets in the same session/flow are consistently forwarded to the same output port. | 5thash | String |
-| vlantype  | VLAN handling. Supported values: `stripping` (remove VLAN tag) or `tagging` (add VLAN tag). | tagging / stripping | String |
-| vlanid    | VLAN ID used when `vlantype="tagging"` (typical range: 1~4094). | 1 | Integer |
-| gtptype   | GTP handling. Supported value: `stripping` (remove GTP header). | stripping | String |
+| Attribute | Type    | Description | Example |
+|-----------|---------|-------------|---------|
+| type      | String  | Output mode: `duplicate` (send a copy to every port listed in `<out>`) or `loadBalance` (select one port from the `<out>` port list per packet/flow). | loadBalance |
+| lbtype    | String  | Effective only when `type="loadBalance"`. Session/flow hashing method used for load balance. Supported value: `5thash` (computes hash by 5-tuple: src/dst IP, src/dst port, L4 protocol) so packets in the same session/flow are consistently forwarded to the same output port. | 5thash |
+| vlantype  | String  | VLAN handling. Supported values: `stripping` (remove VLAN tag) or `tagging` (add VLAN tag). | tagging / stripping |
+| vlanid    | Integer | VLAN ID used when `vlantype="tagging"` (typical range: 1~4094). | 1 |
+| gtptype   | String  | GTP handling. Supported value: `stripping` (remove GTP header). | stripping |
 
 #### Example
 
@@ -50,13 +50,13 @@ Defines output ports. It has a start tag \<out> and an end tag \</out>.
 
 ### \<fid>
 
-Defines packets pass through filter id. It has a start tag \<fid> and an end tag \</fid>.
+Defines the filter IDs applied to packets in the chain. It has a start tag \<fid> and an end tag \</fid>.
 
 #### Attribute
 
-| Attribute | Description                                       | Type   | Default (* must have) |
-|-----------|---------------------------------------------------|--------|------------------------|
-| type      | and/or                                            | String | or                     |
+| Attribute | Description | Type   | Example  |
+|-----------|-------------|--------|----------|
+| type      | Logical operator used to combine multiple filter IDs (`and` / `or`). | String | and / or |
 
 #### Example
 
@@ -71,13 +71,13 @@ Defines packets pass through filter id. It has a start tag \<fid> and an end tag
 
 ### \<next>
 
-Defines going next if packet notmatch filter. It has a next tag \<next> and an end tag \</next>.
+Defines the next action when a packet does not match the filter(s) in the current chain. It has a start tag \<next> and an end tag \</next>.
 
 #### Attribute
 
-| Attribute | Description                                       | Type   | Default (* must have)  |
-|-----------|---------------------------------------------------|--------|------------------------|
-| type      | notmatch                                    | String | match                  |
+| Attribute | Description | Type   | Example  |
+|-----------|-------------|--------|----------|
+| type      | Condition for entering the `<next>` block. Supported value: `notmatch`. | String | notmatch |
 
 #### Example
 

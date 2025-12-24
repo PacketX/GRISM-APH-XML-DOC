@@ -8,7 +8,6 @@ description: Defines the find(f). It has a start tag <find> or <f>
 
 | Attribute | Description                                      | Type     | Default (\* must have)  |
 |----------|---------------------------------------------------|----------|-------------------------|
-| id       | Specifies a unique id for an element              | Interger |                         |
 | name     | refer to wireshark filter function, but less item | String   | \*                      |
 | relation | Equal                                             | ==       | \*                      |
 | content  | content of name, could be empty                   | String   | \*                      |

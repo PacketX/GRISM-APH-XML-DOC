@@ -15,7 +15,7 @@ This case shows how to strip the outer encapsulation of **GTP-U (user-plane)** p
 
 ## Flow
 
-![GTP-U Outer Encapsulation Stripping Flow](/.gitbook/assets/gtpu-outer-encapsulation-stripping.svg)
+![GTP-U Outer Encapsulation Stripping Flow](/.gitbook/assets/case/test/gtpu-outer-encapsulation-stripping.svg)
 
 ## GRISM XML Script
 

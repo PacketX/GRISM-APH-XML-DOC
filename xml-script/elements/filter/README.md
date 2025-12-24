@@ -25,10 +25,10 @@ Please refer to [Element - \<find>](./filter_find.md)
 
 ## Attribute
 
-| Attribute | Description                         | Type    | Default (* must have)  |
-|----------|--------------------------------------|---------|------------------------|
-| id       | Specifies a unique id for an element | Integer | *                      |
-| name     | Specifies a name for an element      | String  |                        |
+| Attribute | Description                          | Type    | Default (* must have)  |
+|-----------|--------------------------------------|---------|------------------------|
+| id        | Specifies a unique id for an element | Integer | *                      |
+| name      | Specifies a name for an element      | String  |                        |
 
 ## Example
 
