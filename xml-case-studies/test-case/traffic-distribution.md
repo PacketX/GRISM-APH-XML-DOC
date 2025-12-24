@@ -4,13 +4,7 @@ This case study shows how to distribute incoming traffic from one input port to 
 
 ## Flow
 
-```mermaid
-flowchart LR
-	trafficIn[Traffic In] --> s11[S1.1]
-	s11 --> lb[Session </br> Load Balance]
-	lb --> s21[S2.1] --> f31[Traffic Out </br> Session 1]
-	lb --> s22[S2.2] --> f32[Traffic Out </br> Session 2]
-```
+![Traffic Distribution Flow](/.gitbook/assets/traffic-distribution.svg)
 
 ## Configuration
 
